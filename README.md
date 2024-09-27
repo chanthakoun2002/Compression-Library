@@ -1,2 +1,2 @@
-# Compression-Library
+# Compression-Library (Java)
 a library of compression algorithms
