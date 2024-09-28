@@ -19,27 +19,47 @@ public class Main {
 //this is to test file compression and decompression for huffman algorithm
     public static void main(String[] args) throws IOException {
         HuffmanCompressor compressor = new HuffmanCompressor();
-        
-        String inputFilePath = "";
-        String compressedFilePath = "";
-        String decompressedFilePath = "";
-        
-        try {
-            //compress file
-            System.out.println("Compressing file...");
-            compressor.compressFile(inputFilePath, compressedFilePath);
-            System.out.println("File compressed successfully: " + compressedFilePath);
-            
-            Map<Character, Integer> frequencies = compressor.calculateFrequencies(inputFilePath);
-            HuffmanCompressor.Node root = compressor.buildHuffmanTree(frequencies);
 
-            //decompress file
-            System.out.println("Decompressing file...");
-            compressor.decompressFile(compressedFilePath, decompressedFilePath, root);
-            System.out.println("File decompressed successfully: " + decompressedFilePath);
+        String inputFilePath = "C:\\Users\\Chant\\OneDrive\\Documents\\GitHubRepo's\\Compression-Library\\CompressionLibrary\\src\\test\\java\\test.txt";
+        String compressedFilePath = "C:\\Users\\Chant\\OneDrive\\Documents\\GitHubRepo's\\Compression-Library\\CompressionLibrary\\src\\test\\java\\compressed.huff";  
+        String decompressedFilePath = "C:\\Users\\Chant\\OneDrive\\Documents\\GitHubRepo's\\Compression-Library\\CompressionLibrary\\src\\test\\java\\decompresed.txt";
+
+        try {
+            // Compress  file
+            System.out.println("Compressing the file...");
+            compressor.compressFile(inputFilePath, compressedFilePath);
+            System.out.println("File compressed successfully.");
+
+            //decompress
+            System.out.println("Decompressing the file...");
+            compressor.decompressFile(compressedFilePath, decompressedFilePath);
+            System.out.println("File decompressed successfully.");
+
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Error during compression or decompression: " + e.getMessage());
         }
+
+        
+        
+        
+        //redundent code
+//        try {
+//            //compress file
+//            System.out.println("Compressing file...");
+//            compressor.compressFile(inputFilePath, compressedFilePath);
+//            System.out.println("File compressed successfully: " + compressedFilePath);
+//            
+//            Map<Character, Integer> frequencies = compressor.calculateFrequencies(inputFilePath);
+//            HuffmanCompressor.Node root = compressor.buildHuffmanTree(frequencies);
+//
+//            //decompress file
+//            System.out.println("Decompressing file...");
+//            compressor.decompressFile(compressedFilePath, decompressedFilePath, root);
+//            System.out.println("File decompressed successfully: " + decompressedFilePath);
+//        } catch (IOException e) {
+//            System.out.println("Failure!!");
+//            e.printStackTrace();
+//        }
         
     }
 }

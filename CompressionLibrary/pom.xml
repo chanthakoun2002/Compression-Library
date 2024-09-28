@@ -30,7 +30,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                    <mainClass>chanthakoun.compressor.Main</mainClass>
+                    <mainClass>chanthakoun.compressionlibrary.Main</mainClass>
                 </configuration>
             </plugin>
         </plugins>
